@@ -1,0 +1,228 @@
+
+/* 
+Paginas para checar los colores en formato hexadecimal
+Colors 
+Adobe color
+Color Hunt 
+Color Tool - Material Desing
+
+*/
+
+
+/*
+Cuando tu empiezas a crear tu pagina web, te basa de un diseño ,por ejemplo, de figma. En figma se encuentra el diseño con
+las medidas de cada cosa (botones, parrafos, titulos, paddings, margenes, espacios entre elementos, etc.).
+Estas medidas usualmente las tomas en pixeles (unidad absoluta), inicialmente esto esta bien. Pero cuando ya intentas ver tu
+pagina web en algun dispositivo con diferentes medidas de pantalla de la iniciales, se ve mal, el valor de los px 
+nunca cambian, por lo tanto, estos valores se cambian a porcentajes y a REM (unidades relativas) para que al momento de 
+cambiar las dimensiones, estas automaticamente cambien de tamaño.
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*Variables de CSS*/
+:root{
+--color-primario: #000000;
+--color-secundario: #f6f6f6;
+--color-terceario: #22D4FD;
+--color-hover:#272727;
+--fuente-krona: 'Krona One', sans-serif;
+--fuente-montserrat: 'Montserrat', sans-serif;
+}
+
+/*Quitando valores predeterminados*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+    box-sizing: border-box;
+}
+
+
+.header {
+
+    padding: 2% 0% 0% 15%; /* arriba-> derecha-> abajo-> izquierda*/
+
+}
+
+.header__menu {
+
+    display: flex;
+    gap: 80px;
+
+}
+
+.header__menu__link {
+
+
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; /*Unidad relativa para cambiar el tamaño de las fuentes*/
+    font-weight: 400;
+    color: var(--color-terceario);
+    text-decoration: none;
+
+}
+
+
+.presentacion{
+
+    padding: 5% 15%; /* vertical y horizontal*/
+    display: flex; /* Activas el flex */
+    align-items: center; /* Nada mas alineas los items */
+    justify-content: space-between; /* espaciado entre todos los componentes */
+    gap: 82px;
+   
+}
+
+.presentacion__contenido {
+
+width: 50%; /* unidad relativa para cambiar el tamaño de los elementos como imagenes*/
+display: flex;
+flex-direction: column; /* direccion de los items*/
+gap: 40px;
+
+}
+
+.presentacion__contenido__titulo {
+
+font-size: 2.25rem;
+font-family: var(--fuente-krona);
+
+}
+
+/*Strong tambien funciona*/
+.titulo-destaque{
+ 
+    color: var(--color-terceario)
+
+}
+
+.presentacion__contenido__texto{
+
+font-size: 1.5rem;
+font-family: var(--fuente-montserrat);
+
+}
+
+
+.presentacion__contenido__texto a{ /*Combinacion de selctor de clase con selector de tipo*/
+    text-decoration: none;
+    color: var(--color-terceario);
+}
+
+
+.presentacion__enlaces {
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+gap: 32px;
+
+}
+
+.presentacion__enlaces__subtitulo{
+
+    font-family: var(--fuente-krona);
+    font-weight: 400;
+    font-size: 1.5rem;
+    
+}
+
+.presentacion__enlaces__link {
+    
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--color-terceario); /* grosor tipo color*/
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--color-secundario);
+    font-family: var(--fuente-montserrat);
+
+}
+
+.presentacion__enlaces__link:hover { /* ejemplos de pseudo clases*/
+
+    background-color: var(--color-hover);
+
+}
+
+
+.presentacion__imagen{
+
+width: 50%;
+
+}
+
+
+.footer {
+    
+    color: var(--color-primario);
+    background-color: var(--color-terceario);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+
+}
+
+/* Responsives */
+@media (max-width: 1200px ){
+
+    .header{
+
+    padding: 10%;
+    
+    }
+
+    .header__menu{
+      
+    justify-content: center;
+    gap: 10%;
+
+    }   
+
+
+    .header__menu__link {
+
+        font-size: 1.5rem; /*Unidad relativa para cambiar el tamaño de las fuentes*/
+            
+    }
+
+
+
+
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .presentacion__contenido{
+
+    width: auto; /* Se adapta al contenido padre*/
+
+    }
+
+    .footer{
+
+        width: auto;
+
+    }
+    
+
+}
